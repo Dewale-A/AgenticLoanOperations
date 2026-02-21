@@ -1,165 +1,202 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 550">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 600">
   <defs>
-    <linearGradient id="docTrackerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    <!-- Modern gradient background -->
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c1e"/>
+      <stop offset="50%" style="stop-color:#1a1a3e"/>
+      <stop offset="100%" style="stop-color:#0c0c1e"/>
     </linearGradient>
-    <linearGradient id="verifyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    
+    <!-- Stage gradients -->
+    <linearGradient id="stage1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
     </linearGradient>
-    <linearGradient id="complianceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    <linearGradient id="stage2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
     </linearGradient>
-    <linearGradient id="exceptionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    <linearGradient id="stage3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
     </linearGradient>
-    <linearGradient id="fundingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    <linearGradient id="stage4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
     </linearGradient>
-    <linearGradient id="commGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    <linearGradient id="stage5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
     </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    <linearGradient id="stage6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    
+    <!-- Arrow gradient -->
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    
+    <!-- Glow -->
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
   
   <!-- Background -->
-  <rect width="1100" height="550" fill="#f8fafc"/>
+  <rect width="950" height="600" fill="url(#bgGrad2)"/>
+  
+  <!-- Subtle circuit pattern -->
+  <g stroke="#6366f1" stroke-opacity="0.1" stroke-width="1" fill="none">
+    <path d="M0 300 H950"/>
+    <path d="M100 0 V600"/>
+    <path d="M250 0 V600"/>
+    <path d="M400 0 V600"/>
+    <path d="M550 0 V600"/>
+    <path d="M700 0 V600"/>
+    <path d="M850 0 V600"/>
+  </g>
   
   <!-- Title -->
-  <text x="550" y="35" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#1e293b">Loan Operations - Post-Approval Agent Architecture</text>
+  <text x="475" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="26" font-weight="bold">Loan Operations Multi-Agent System</text>
+  <text x="475" y="65" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="14">Post-Approval Back Office Automation</text>
   
-  <!-- Input Section -->
-  <rect x="30" y="120" width="130" height="160" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
-  <text x="95" y="150" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569">INPUT</text>
-  <text x="95" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Approved Loan</text>
-  <line x1="50" y1="185" x2="140" y2="185" stroke="#e2e8f0"/>
-  <text x="95" y="205" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Loan Details</text>
-  <text x="95" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Documents</text>
-  <text x="95" y="235" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Conditions</text>
-  <text x="95" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Compliance Status</text>
-  <text x="95" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Exceptions</text>
-
-  <!-- Arrow from Input -->
-  <line x1="160" y1="200" x2="195" y2="200" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="195,195 205,200 195,205" fill="#cbd5e1"/>
+  <!-- Main flow arrow background -->
+  <rect x="60" y="195" width="830" height="210" rx="20" fill="#1e1e3f" stroke="url(#arrowGrad)" stroke-width="2" stroke-opacity="0.5"/>
+  
+  <!-- Stage Labels -->
+  <text x="475" y="180" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="3">PROCESSING PIPELINE</text>
+  
+  <!-- Input: Approved Loan -->
+  <rect x="20" y="260" width="90" height="80" rx="10" fill="#1e1e3f" stroke="#6366f1" stroke-width="2"/>
+  <text x="65" y="290" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-size="10" font-weight="bold">APPROVED</text>
+  <text x="65" y="305" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-size="10" font-weight="bold">LOAN</text>
+  <text x="65" y="325" text-anchor="middle" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="9">Input</text>
   
   <!-- Agent 1: Document Tracker -->
-  <rect x="210" y="70" width="170" height="100" rx="20" fill="url(#docTrackerGrad)" filter="url(#shadow)"/>
-  <text x="295" y="105" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Document Tracker</text>
-  <text x="295" y="125" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Track missing docs</text>
-  <text x="295" y="142" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Chase borrower</text>
-  <text x="295" y="159" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">document_checker</text>
+  <g transform="translate(130, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage1)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 1</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Document</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Tracker</text>
+    <text x="60" y="105" text-anchor="middle" fill="#c7d2fe" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#e0e7ff" font-family="Arial, sans-serif" font-size="8">Chase missing</text>
+    <text x="60" y="152" text-anchor="middle" fill="#e0e7ff" font-family="Arial, sans-serif" font-size="8">documents</text>
+  </g>
   
   <!-- Agent 2: Verification -->
-  <rect x="210" y="190" width="170" height="100" rx="20" fill="url(#verifyGrad)" filter="url(#shadow)"/>
-  <text x="295" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Verification Agent</text>
-  <text x="295" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Verify authenticity</text>
-  <text x="295" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Check completeness</text>
-  <text x="295" y="279" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">document_verifier</text>
+  <g transform="translate(265, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage2)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 2</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Document</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Verifier</text>
+    <text x="60" y="105" text-anchor="middle" fill="#ddd6fe" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#ede9fe" font-family="Arial, sans-serif" font-size="8">Authenticate</text>
+    <text x="60" y="152" text-anchor="middle" fill="#ede9fe" font-family="Arial, sans-serif" font-size="8">&amp; validate</text>
+  </g>
   
   <!-- Agent 3: Compliance -->
-  <rect x="210" y="310" width="170" height="100" rx="20" fill="url(#complianceGrad)" filter="url(#shadow)"/>
-  <text x="295" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Compliance Checker</text>
-  <text x="295" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">AML/KYC/TILA/ECOA</text>
-  <text x="295" y="382" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Final review</text>
-  <text x="295" y="399" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">compliance_validator</text>
-
-  <!-- Arrows between left agents -->
-  <path d="M 295 170 L 295 185" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="290,185 295,195 300,185" fill="#cbd5e1"/>
+  <g transform="translate(400, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage3)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 3</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Compliance</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Checker</text>
+    <text x="60" y="105" text-anchor="middle" fill="#fbcfe8" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#fce7f3" font-family="Arial, sans-serif" font-size="8">Final regulatory</text>
+    <text x="60" y="152" text-anchor="middle" fill="#fce7f3" font-family="Arial, sans-serif" font-size="8">review</text>
+  </g>
   
-  <path d="M 295 290 L 295 305" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="290,305 295,315 300,305" fill="#cbd5e1"/>
-
   <!-- Agent 4: Exception Handler -->
-  <rect x="460" y="190" width="170" height="100" rx="20" fill="url(#exceptionGrad)" filter="url(#shadow)"/>
-  <text x="545" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Exception Handler</text>
-  <text x="545" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Analyze issues</text>
-  <text x="545" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Propose solutions</text>
-  <text x="545" y="279" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">exception_analyzer</text>
-
+  <g transform="translate(535, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage4)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 4</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Exception</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Handler</text>
+    <text x="60" y="105" text-anchor="middle" fill="#fef3c7" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#fef9c3" font-family="Arial, sans-serif" font-size="8">Resolve issues</text>
+    <text x="60" y="152" text-anchor="middle" fill="#fef9c3" font-family="Arial, sans-serif" font-size="8">&amp; escalate</text>
+  </g>
+  
   <!-- Agent 5: Funding Coordinator -->
-  <rect x="460" y="310" width="170" height="100" rx="20" fill="url(#fundingGrad)" filter="url(#shadow)"/>
-  <text x="545" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Funding Coordinator</text>
-  <text x="545" y="365" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Calculate amounts</text>
-  <text x="545" y="382" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Prepare disbursement</text>
-  <text x="545" y="399" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">funding_calculator</text>
-
-  <!-- Arrows to Exception Handler -->
-  <path d="M 380 120 Q 420 120 420 190 Q 420 240 455 240" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
-  <polygon points="455,235 465,240 455,245" fill="#cbd5e1"/>
+  <g transform="translate(670, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage5)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 5</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Funding</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Coordinator</text>
+    <text x="60" y="105" text-anchor="middle" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#d1fae5" font-family="Arial, sans-serif" font-size="8">Prepare for</text>
+    <text x="60" y="152" text-anchor="middle" fill="#d1fae5" font-family="Arial, sans-serif" font-size="8">disbursement</text>
+  </g>
   
-  <path d="M 380 240 L 455 240" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="455,235 465,240 455,245" fill="#cbd5e1"/>
+  <!-- Agent 6: Communication -->
+  <g transform="translate(805, 220)">
+    <rect width="120" height="160" rx="12" fill="url(#stage6)" filter="url(#glow2)"/>
+    <rect x="10" y="10" width="100" height="35" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <text x="60" y="32" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">STAGE 6</text>
+    <text x="60" y="70" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Borrower</text>
+    <text x="60" y="85" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Comms</text>
+    <text x="60" y="105" text-anchor="middle" fill="#a5f3fc" font-family="Arial, sans-serif" font-size="9">Agent</text>
+    <line x1="10" y1="120" x2="110" y2="120" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" fill="#cffafe" font-family="Arial, sans-serif" font-size="8">Status updates</text>
+    <text x="60" y="152" text-anchor="middle" fill="#cffafe" font-family="Arial, sans-serif" font-size="8">&amp; notifications</text>
+  </g>
   
-  <path d="M 380 360 Q 420 360 420 290 Q 420 240 455 240" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
-
-  <!-- Arrow from Exception to Funding -->
-  <path d="M 545 290 L 545 305" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="540,305 545,315 550,305" fill="#cbd5e1"/>
-
-  <!-- Agent 6: Communication Agent -->
-  <rect x="710" y="190" width="170" height="100" rx="20" fill="url(#commGrad)" filter="url(#shadow)"/>
-  <text x="795" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="white">Communication Agent</text>
-  <text x="795" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Draft updates</text>
-  <text x="795" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="rgba(255,255,255,0.9)">Borrower notifications</text>
-  <text x="795" y="279" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">communication_drafter</text>
-
-  <!-- Arrows to Communication Agent -->
-  <path d="M 380 120 Q 650 70 710 210" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+  <!-- Tools section -->
+  <rect x="50" y="440" width="400" height="100" rx="12" fill="#1e1e3f" stroke="#6366f1" stroke-width="1"/>
+  <text x="70" y="465" fill="#6366f1" font-family="Arial, sans-serif" font-size="12" font-weight="bold">TOOLS</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-size="10">
+    <text x="70" y="490">• document_checker</text>
+    <text x="70" y="510">• document_verifier</text>
+    <text x="70" y="530">• compliance_validator</text>
+    <text x="230" y="490">• exception_analyzer</text>
+    <text x="230" y="510">• funding_calculator</text>
+    <text x="230" y="530">• communication_drafter</text>
+  </g>
   
-  <path d="M 630 240 L 705 240" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="705,235 715,240 705,245" fill="#cbd5e1"/>
+  <!-- Output section -->
+  <rect x="500" y="440" width="400" height="100" rx="12" fill="#1e1e3f" stroke="#10b981" stroke-width="2"/>
+  <text x="520" y="465" fill="#10b981" font-family="Arial, sans-serif" font-size="12" font-weight="bold">OUTPUTS</text>
+  <g fill="#ffffff" font-family="Arial, sans-serif" font-size="10">
+    <text x="520" y="490">• Funding Package (ready for disbursement)</text>
+    <text x="520" y="510">• Compliance Certification</text>
+    <text x="520" y="530">• Borrower Communications</text>
+  </g>
   
-  <path d="M 630 360 Q 660 360 660 290 Q 660 240 705 240" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
-
-  <!-- Arrow to Output -->
-  <line x1="880" y1="240" x2="915" y2="240" stroke="#cbd5e1" stroke-width="2"/>
-  <polygon points="915,235 925,240 915,245" fill="#cbd5e1"/>
-
-  <!-- Output Section -->
-  <rect x="930" y="100" width="140" height="280" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow)"/>
-  <text x="1000" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569">OUTPUT</text>
+  <!-- Flow arrows between agents -->
+  <g fill="#ffffff" opacity="0.6">
+    <polygon points="255,300 260,295 260,305"/>
+    <polygon points="390,300 395,295 395,305"/>
+    <polygon points="525,300 530,295 530,305"/>
+    <polygon points="660,300 665,295 665,305"/>
+    <polygon points="795,300 800,295 800,305"/>
+  </g>
   
-  <rect x="945" y="150" width="110" height="35" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
-  <text x="1000" y="172" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#1e40af">Document Report</text>
+  <!-- Timeline indicator -->
+  <text x="475" y="415" text-anchor="middle" fill="#6366f1" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Automated Processing: Hours instead of Days</text>
   
-  <rect x="945" y="195" width="110" height="35" rx="4" fill="#d1fae5" stroke="#6ee7b7"/>
-  <text x="1000" y="217" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#065f46">Verification Status</text>
+  <!-- Tech badges -->
+  <rect x="50" y="560" width="70" height="25" rx="12" fill="#4f46e5"/>
+  <text x="85" y="577" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">CrewAI</text>
   
-  <rect x="945" y="240" width="110" height="35" rx="4" fill="#ede9fe" stroke="#c4b5fd"/>
-  <text x="1000" y="262" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#5b21b6">Compliance Report</text>
+  <rect x="130" y="560" width="70" height="25" rx="12" fill="#1a73e8"/>
+  <text x="165" y="577" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">OpenAI</text>
   
-  <rect x="945" y="285" width="110" height="35" rx="4" fill="#fef3c7" stroke="#fcd34d"/>
-  <text x="1000" y="307" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#92400e">Exception Analysis</text>
-  
-  <rect x="945" y="330" width="110" height="35" rx="4" fill="#fce7f3" stroke="#f9a8d4"/>
-  <text x="1000" y="352" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" fill="#be185d">Funding Package</text>
-
-  <!-- Pipeline Status Labels -->
-  <rect x="210" y="430" width="170" height="25" rx="4" fill="#e0f2fe"/>
-  <text x="295" y="447" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#0369a1">DOCUMENT COLLECTION</text>
-  
-  <rect x="460" y="430" width="170" height="25" rx="4" fill="#dcfce7"/>
-  <text x="545" y="447" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#15803d">RESOLUTION & PREP</text>
-  
-  <rect x="710" y="430" width="170" height="25" rx="4" fill="#fef3c7"/>
-  <text x="795" y="447" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#a16207">COMMUNICATION</text>
-
-  <!-- Footer badges -->
-  <rect x="380" y="490" width="80" height="25" rx="12" fill="#1e293b"/>
-  <text x="420" y="507" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="white">CrewAI</text>
-  
-  <rect x="470" y="490" width="100" height="25" rx="12" fill="#10a37f"/>
-  <text x="520" y="507" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="white">OpenAI GPT</text>
-  
-  <rect x="580" y="490" width="80" height="25" rx="12" fill="#3b82f6"/>
-  <text x="620" y="507" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" fill="white">Python</text>
+  <rect x="210" y="560" width="70" height="25" rx="12" fill="#333333"/>
+  <text x="245" y="577" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Python</text>
 </svg>

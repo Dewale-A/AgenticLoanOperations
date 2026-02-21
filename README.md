@@ -92,6 +92,7 @@ cp .env.example .env
 
 ### Running the System
 
+**CLI Mode:**
 ```bash
 # List available loan files
 python main.py --list
@@ -106,12 +107,25 @@ python main.py
 python main.py --loan LOAN001.json --quiet
 ```
 
+**API Mode:**
+```bash
+# Start the FastAPI server
+uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+
+# Or with Docker
+docker-compose up -d
+```
+
+**API Docs:** http://localhost:8000/docs (Swagger UI)
+
 ## 📁 Project Structure
 
 ```
 AgenticLoanOperations/
-├── main.py                     # Entry point with CLI
+├── main.py                     # CLI entry point
 ├── requirements.txt            # Dependencies
+├── Dockerfile                 # Container image
+├── docker-compose.yml         # Container orchestration
 ├── .env.example               # Environment template
 ├── sample_loans/              # Sample loan files
 │   ├── LOAN001.json           # Mortgage - document collection
@@ -121,6 +135,8 @@ AgenticLoanOperations/
 ├── docs/
 │   └── architecture.svg       # System architecture diagram
 ├── src/
+│   ├── api/
+│   │   └── main.py            # FastAPI application
 │   ├── agents/
 │   │   └── ops_agents.py      # Agent definitions
 │   ├── tasks/
@@ -132,7 +148,39 @@ AgenticLoanOperations/
 │   ├── models/
 │   │   └── loan_file.py       # Data models
 │   └── crew.py                # Crew orchestration
-└── tests/                     # Unit tests
+└── tests/
+    └── test_api.py            # API tests
+```
+
+## 🌐 API Reference
+
+Interactive docs at: `http://localhost:8000/docs`
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/health` | Health check |
+| GET | `/api/v1/loans` | List available loan files |
+| GET | `/api/v1/loans/{loan_id}` | Get loan details |
+| POST | `/api/v1/process` | Process loan (sync) |
+| POST | `/api/v1/process/async` | Process loan (async) |
+| GET | `/api/v1/jobs/{job_id}` | Check async job status |
+
+**Example - Process a loan:**
+```bash
+curl -X POST http://localhost:8000/api/v1/process \
+  -H "Content-Type: application/json" \
+  -d '{"loan_id": "LOAN001"}'
+```
+
+**Example - Async processing:**
+```bash
+# Submit job
+curl -X POST http://localhost:8000/api/v1/process/async \
+  -H "Content-Type: application/json" \
+  -d '{"loan_id": "LOAN001"}'
+
+# Poll for status
+curl http://localhost:8000/api/v1/jobs/{job_id}
 ```
 
 ## 📊 Sample Loan Files
@@ -175,6 +223,31 @@ This project is part of a loan lifecycle automation suite:
 - **[AgenticLoanOrigination](https://github.com/Dewale-A/AgenticLoanOrigination)** - Application → Approval (upstream)
 - **AgenticLoanOperations** - Approval → Funding (this project)
 
+## 🐳 Docker Deployment
+
+```bash
+# Build and run
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop
+docker-compose down
+```
+
+The API will be available at `http://localhost:8000`.
+
+## 🧪 Testing
+
+```bash
+# Run tests
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=src --cov-report=html
+```
+
 ## 📈 Future Enhancements
 
 - [ ] Integration with document management systems
@@ -183,6 +256,8 @@ This project is part of a loan lifecycle automation suite:
 - [ ] ML-based fraud detection
 - [ ] Integration with core banking systems
 - [ ] Parallel document verification for faster processing
+- [ ] Redis job queue for production async processing
+- [ ] PostgreSQL for job persistence
 
 ## 📜 License
 
